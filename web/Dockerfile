@@ -2,7 +2,7 @@ FROM alpine-python3.6
 ENV PYTHONUNBUFFERED 1
 
 
-ADD . /project/fz
+ADD ../ /project/fz
 
 WORKDIR /project/fz
 

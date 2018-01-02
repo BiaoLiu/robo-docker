@@ -9,7 +9,7 @@ version: "3"
     
 services:
     web:
-        build: .
+        build: ../
         volumes:
             - .:/project/fz
 #        expose:
