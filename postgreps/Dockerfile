@@ -1,2 +1,2 @@
-FROM redis
+FROM postgres
 
