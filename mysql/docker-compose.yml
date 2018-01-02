@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  mysql:
+  db:
     build: .
     environment:
       - MYSQL_ROOT_PASSWORD=liubiao123456
