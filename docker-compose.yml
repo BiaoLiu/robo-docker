@@ -1,0 +1,18 @@
+#####
+# Docker compose YAML file
+#
+# For documentation see: https://docs.docker.com/compose/yml/
+#####
+
+version: "3"
+
+    
+services:
+    web:
+        build: .
+        volumes:
+            - .:/project/fz
+#        expose:
+#            - "8015"
+        ports:
+            - "8015:8015"

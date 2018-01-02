@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  mysql:
+    build: .
+    ports:
+      - '3307:3306'
+    networks:
+      - custom
+    container_name: dockermysql
+    volumes:
+      - ./db:/var/lib/mysql
+
+networks:
+  custom:
+    external: true
