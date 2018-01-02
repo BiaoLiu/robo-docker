@@ -3,11 +3,13 @@ version: '3'
 services:
   mysql:
     build: .
+    environment:
+      - MYSQL_ROOT_PASSWORD=liubiao123456
     ports:
       - '3307:3306'
     networks:
       - custom
-    container_name: dockermysql
+    container_name: docker_mysql
     volumes:
       - ./db:/var/lib/mysql
 
