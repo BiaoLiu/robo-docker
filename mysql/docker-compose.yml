@@ -8,11 +8,11 @@ services:
     ports:
       - '3307:3306'
     networks:
-      - custom
+      - robo
     container_name: docker_mysql
     volumes:
       - ./db:/var/lib/mysql
 
 networks:
-  custom:
+  robo:
     external: true

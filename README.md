@@ -12,7 +12,7 @@
 ### docker容器互联
 
 1.创建网络
-docker network create -d bridge custom (network_name)
+docker network create -d bridge robo (network_name)
 
 2.在docker-compose.yml中使用networks节点，配置互联的网络，如：
 
@@ -22,12 +22,12 @@ services:
   db:
     build: .
     networks:
-      - custom
+      - robo
     container_name: docker_redis
     ports:
       - '6380:6379'
 
 networks:
-  custom:
+  robo:
     external: true
 ```
