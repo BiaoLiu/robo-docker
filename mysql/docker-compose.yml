@@ -11,7 +11,7 @@ services:
       - robo
     container_name: docker_mysql
     volumes:
-      - ./db:/var/lib/mysql
+      - /db:/var/lib/mysql
 
 networks:
   robo:
