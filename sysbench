@@ -1,0 +1,31 @@
+sysbench --test=oltp --oltp-table-size=1000 --oltp-table-name=t_test \
+--mysql-table-engine=innodb \
+--mysql-host=127.0.0.1 \
+--mysql-db=test \
+--mysql-user=root \
+--mysql-password=robo@2025 \
+prepare
+
+sysbench /usr/share/sysbench/oltp_read_only.lua --mysql-host=127.0.0.1 \
+ --db-driver=mysql \
+ --mysql-port=3306 \
+ --mysql-user=root \
+ --mysql-password=liubiao123456 \
+ --mysql-db=test \
+  --tables=10 --table-size=10000 --report-interval=10 --threads=10 --time=300 \
+  prepare
+
+sysbench /usr/local/sysbench/share/sysbench/oltp_read_write.lua
+--mysql-host=10.1.0.10
+--mysql-port=3306
+--mysql-user=dbuser
+--mysql-password=abc.1234
+--mysql-db=dbtest
+--tables=10
+--table-size=1000000 --report-interval=10 --threads=1000 --time=300 prepare
+
+========================================
+准备测试数据
+========================================
+
+ sysbench /usr/share/sysbench/oltp_read_write.lua --mysql-host=127.0.0.1 --db-driver=mysql --mysql-port=3306 --mysql-user=root --mysql-password=liubiao --mysql-db=dbtest --tables=10 --table-size=1000000 --report-interval=10 --threads=10 --time=300  prepare

@@ -1,7 +1,7 @@
-FROM   docker.io/alpine:latest
+FROM python:3.6-alpine
 
 RUN apk update && apk add \
-        git openssh && \
+        git openssh \
         libuuid \
         pcre \
         mailcap \
@@ -9,12 +9,14 @@ RUN apk update && apk add \
         libc-dev \
         linux-headers \
         pcre-dev \
-        python3-dev \
-        --no-cache python3 && \
-        python3 -m ensurepip && \
-        rm -r /usr/lib/python*/ensurepip && \
-        pip3 install --upgrade pip setuptools && \
-        pip3 install uwsgi && \
-        if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
-        if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi && \
-        rm -r /root/.cache
+    && pip install --no-cache-dir uWSGI \
+    && rm -rf /tmp/*
+
+RUN apk add --no-cache --virtual .build-deps mariadb-dev \
+    && pip install mysqlclient \
+    && apk add --virtual .runtime-deps mariadb-client-libs \
+    && apk del .build-deps
+    && apk del \
+        gcc \
+        libc-dev \
+        linux-headers \
