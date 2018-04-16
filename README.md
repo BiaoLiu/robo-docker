@@ -2,11 +2,12 @@
 
 ### 包含以下镜像的Dockerfile
 
-- 内置python3.6的alpine
+- python3.6
 - mysql
 - postgreps
 - redis
 - nginx
+- zentao
 
 
 ### docker容器互联
