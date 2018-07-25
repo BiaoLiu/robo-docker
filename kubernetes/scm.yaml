@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: supplier
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: supplier
+  template:
+    metadata:
+      labels:
+        app: supplier
+    spec:
+      containers:
+        - name: supplier
+          image: robo2025/scmsupplier-admin:dev
+          ports:
+            - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: supplier
+  labels:
+    app: supplier
+spec:
+  ports:
+    - port: 9000
+      targetPort: 80
+  selector:
+    app: supplier
