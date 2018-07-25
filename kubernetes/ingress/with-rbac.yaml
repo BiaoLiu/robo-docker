@@ -4,9 +4,9 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: nginx-ingress-controller
-  namespace: ingress-nginx
+  namespace: ingress-nginx 
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: ingress-nginx
@@ -74,3 +74,5 @@ spec:
             timeoutSeconds: 1
       nodeSelector:
          robo/ingress-controller: dev
+
+
