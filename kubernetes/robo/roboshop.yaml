@@ -1,0 +1,35 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: roboshop
+spec:
+  template:
+    metadata:
+      labels:
+        app: roboshop
+    spec:
+      containers:
+        - name: roboshop
+          image: robo2025/roboshop:dev
+          command:
+
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - configMapRef:
+                 name: roboshop
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: roboshop
+spec:
+  type: NodePort
+  ports:
+    - port: 9000
+      targetPort: 8000
+      nodePort: 30008
+  selector:
+    app: roboshop

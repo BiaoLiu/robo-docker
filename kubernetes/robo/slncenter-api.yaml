@@ -1,0 +1,41 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: slncenter-api
+spec:
+  template:
+    metadata:
+      labels:
+        app: slncenter-api
+    spec:
+      containers:
+        - name: slncenter-api
+          image: robo2025/slncenter-api-l:dev
+          env:
+            - name: ROBO_DEPLOY_MODE
+              value: dev
+            - name: SSO_HOST
+              value: https://testapi.robo2025.com/sso/server/verify
+            - name: MYSQL_DSN
+              value: 127.0.0.1
+          command: ["/bin/sh","-c"]
+          args:
+            -  slncenter -l :9008 -d "127.0.0.1"
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: slncenter-api
+spec:
+  type: NodePort
+  ports:
+    - port: 9000
+      targetPort: 8000
+      nodePort: 30005
+  selector:
+    app: slncenter-api

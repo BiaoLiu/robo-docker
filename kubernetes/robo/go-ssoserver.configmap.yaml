@@ -5,13 +5,13 @@ metadata:
   name: ssoserver-config
   namespace: default
 data:
-  GIN_MODE: debug
-  PORT: 8000
-  GEETEST_ID: c4c995f231bc64d5c725fff2ae47e584
-  GEETEST_KEY: a5a9ddbafdfc95a372ace42d27abaed8
-  REDIS_ADDRESS: redis.robo2025.com:63679
-  REDIS_PASSWORD: robo@2025
-  DOMAIN: https://test-home.robo2025.com
-  SUPPLIER_REGISTER_URL: https://test-prsp.robo2025.com/#/prsp/register
-  COMMON_API: https://testapi.robo2025.com/common
-  MYSQL_DSN: robo2025:robodev2018@tcp(bj-cdb-nwi3nzcr.sql.tencentcdb.com:63668)/test_robo_user?charset=utf8
+  GIN_MODE: "debug"
+  PORT: "8000"
+  GEETEST_ID: "c4c995f231bc64d47e584"
+  GEETEST_KEY: "a5a9ddbafdfc95a372baed8"
+  REDIS_ADDRESS: "redis.com:63679"
+  REDIS_PASSWORD: "robo@2025"
+  DOMAIN: "https://test-home.robo2025.com"
+  SUPPLIER_REGISTER_URL: "https://test-prsp.robo2025.com/#/prsp/register"
+  COMMON_API: "https://testapi.robo2025.com/common"
+  MYSQL_DSN: "robof"
