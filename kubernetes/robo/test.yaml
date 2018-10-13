@@ -1,0 +1,36 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: robodl-front
+  namespace: proc
+spec:
+  template:
+    metadata:
+      labels:
+         app: robodl-front
+    spec:
+      containers:
+        - name: robodl-front
+          image: robo2025/robodl-front:dev-1.2
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+        - name: robonav-front
+          image: robo2025/robonav-front:dev-1.
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: robodl-front
+  namespace: proc
+  labels:
+    app: robodl-front
+spec:
+  type: NodePort
+  ports:
+    -  port: 9000
+       targetPort: 80
+       nodePort: 31013
+  selector:
+    app: robodl-front

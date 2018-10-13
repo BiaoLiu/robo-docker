@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: roboshop
 spec:
+  replicas: 2
   template:
     metadata:
       labels:
@@ -11,8 +12,6 @@ spec:
       containers:
         - name: roboshop
           image: robo2025/roboshop:dev
-          command:
-
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
