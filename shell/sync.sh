@@ -17,13 +17,14 @@ for dir in $(ls -l  |awk '/^d/ {print $NF}');do
      # 只取匹配到的第一行
      deploy_name=$(awk -F ':' '$0~/^\s*name:/{print $2;exit;}' "$dir/$file"   | sed 's/[ \t]*//')
 
-     new_image=$(awk -F ' ' '$1~/^'"${deploy_name}"'$/{print $2}' deploy.txt)
-
      old_image=$(sed -n 's/image:\s*\(.*\)/\1/p' "$dir/$file" | sed 's/[ \t]*//')
 
      if [ ! -n "$old_image" ]; then
          continue
      fi
+
+     #new_image=$(awk -F ' ' '$1~/^'"${deploy_name}"'$/{print $2}' deploy.txt)
+     new_image=$(sed -n "s/^${deploy_name}\s\+\(.*\)/\1/p"  deploy.txt)
 
      echo "   deploy file: $file"
      echo "   deploy name: $deploy_name"
