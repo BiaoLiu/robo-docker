@@ -26,10 +26,10 @@ for dir in $(ls -l  |awk '/^d/ {print $NF}');do
      #new_image=$(awk -F ' ' '$1~/^'"${deploy_name}"'$/{print $2}' deploy.txt)
      new_image=$(sed -n "s/^${deploy_name}\s\+\(.*\)/\1/p"  deploy.txt)
 
-     echo "   deploy file: $file"
+     echo "   deploy file: $file       "
      echo "   deploy name: $deploy_name"
-     echo "   old image: $old_image   "
-     echo "   new image: $new_image   "
+     echo "   old image: $old_image    "
+     echo "   new image: $new_image    "
 
      if [ -n "$new_image" ]; then
          sed -i "s?\(image:\s*\)\(.*\)?\1$new_image?" "$dir/$file"
