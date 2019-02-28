@@ -30,7 +30,7 @@ done
 # deploy.txt列对齐
 awk -F ' ' '{printf("%-40s %s\n",$1,$2)}' deploy_temp.txt  > deploy.txt
 
-sudo rm -rf deploy_temp.txt
+sudo rm -f deploy_temp.txt
 
 echo "============================================================================"
 
