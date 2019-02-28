@@ -30,7 +30,10 @@ for dir in $(ls -l  |awk '/^d/ {print $NF}');do
      echo "   old image: $old_image   "
      echo "   new image: $new_image   "
 
-     sed -i "s?\(image:\s*\)\(.*\)?\1$new_image?" "$dir/$file"
+     if [ -n "$new_image" ]; then
+         sed -i "s?\(image:\s*\)\(.*\)?\1$new_image?" "$dir/$file"
+     fi
+
      echo "-----------------------------------------------------------------"
 
   done
