@@ -13,8 +13,8 @@ for dir in $(ls -l  |awk '/^d/ {print $NF}');do
   echo "================================================================="
 
   for file in $(ls -l $dir |awk '/^-/ {print $NF}');do
-     # deploy_name=$(sed -n 's/-\s*name:\s*\(.*\)/\1/p' "$dir/$file"  | sed 's/^[ \t]*//')
      # 只取匹配到的第一行
+     # deploy_name=$(sed -n 's/-\s*name:\s*\(.*\)/\1/p' "$dir/$file"  | sed 's/^[ \t]*//')
      deploy_name=$(awk -F ':' '$0~/^\s*name:/{print $2;exit;}' "$dir/$file"   | sed 's/[ \t]*//')
 
      old_image=$(sed -n 's/image:\s*\(.*\)/\1/p' "$dir/$file" | sed 's/[ \t]*//')
