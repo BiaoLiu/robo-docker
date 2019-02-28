@@ -1,46 +1,46 @@
-aggregator-front
-aggregator-go-api
-case-api
-commonserver-api
-cost-calculation-api
-finance-front
-financial-api
-freight-api
-goods-authorization-api
-goods-inquiry-api
-goods-quotation-api
-idgenerator-api
-inventory-api
-operation-api
-order-api
-palletize-sln-api
-personal-count-api
-personalcenter-front
-plan-order-api
-product-recommend-api
-product-selection-api
-proofing-inquiry2-api
-proofingsupplier-front
-requirements-gathering-api
-roboshop-api
-roboshop-front
-robosuper-front
-robotsln-api
-robotsln-api-new
-robouser-api
-sample-order-api
-scmoperation-front
-scmservice-api
-scmshop-api
-scmsupplier-front
-secondshop-front
-secondshop-go-api
-sewage-integration-go-api
-shm-quotation-api
-sms-batch-api
-sms-center-api
-solution-quote-api
-sso-api
-sso-front
-vision-api
-welding-api
+aggregator-front                         robo2025/aggregator-front:dev-v1.5.13
+aggregator-go-api                        robo2025/aggregator-go-api:dev-1.1.2
+case-api                                 robo2025/case-api-l:dev-1.9.92
+commonserver-api                         robo2025/commonserver-api-l:dev-1.3
+cost-calculation-api                     robo2025/cost-calculation-api:dev-1.0.14
+finance-front                            robo2025/finance-front-l:dev-v2.0.7
+financial-api                            robo2025/financial-api:dev-0.2.8
+freight-api                              robo2025/freight-api:dev-1.2.6
+goods-authorization-api                  robo2025/goods-authorization-api:dev-0.1.0
+goods-inquiry-api                        robo2025/goods-inquiry-api:dev-1.1.9
+goods-quotation-api                      robo2025/goods-quotation-api:dev-0.2.2
+idgenerator-api                          robo2025/idgenerator-l:dev-1.1.2
+inventory-api                            robo2025/inventory-api-l:dev-1.6.4
+operation-api                            robo2025/operation-log-l:dev-1.4.11
+order-api                                robo2025/orderadmin-api-l:dev-1.7.8
+palletize-sln-api                        robo2025/palletize-sln-api:dev-1.0.7
+personal-count-api                       robo2025/personal-count-api:dev-1.0.6
+personalcenter-front                     robo2025/personalcenter-front-l:dev-v2.7.3
+plan-order-api                           robo2025/plan_order-l:dev-1.3.3
+product-recommend-api                    robo2025/product-recommend-api:dev-1.3.1
+product-selection-api                    robo2025/product-selection:dev-1.5.0
+proofing-inquiry2-api                    robo2025/proofing-inquiry2-l:dev-1.1.6
+proofingsupplier-front                   robo2025/proofingsupplier-front:dev-v1.6.2
+requirements-gathering-api               robo2025/requirements-gathering-api:dev-1.0.0
+roboshop-api                             robo2025/roboshop-api-l:dev-2.2.1
+roboshop-front                           robo2025/roboshop-front-l:dev-v4.0.9
+robosuper-front                          robo2025/robosuper-front:dev-v1.0.0
+robotsln-api                             robo2025/robotsln-api:dev-1.8.9
+robotsln-api-new                         robo2025/robotsln-api-new:dev-1.4.2
+robouser-api                             robo2025/robouser-api-l:dev-1.8.0
+sample-order-api                         robo2025/sample-order:dev-1.1.9
+scmoperation-front                       robo2025/scmoperation-front-l:dev-v2.10.1
+scmservice-api                           robo2025/scmservice-api-l:dev-1.6.4
+scmshop-api                              robo2025/scmshop-api-l:dev-2.2.9
+scmsupplier-front                        robo2025/scmsupplier-front-l:dev-v2.7.9
+secondshop-front                         robo2025/secondshop-front:dev-v2.0.9
+secondshop-go-api                        robo2025/secondshop-go-api:dev-1.0.4
+sewage-integration-go-api                robo2025/sewage-integration-go-api:dev-1.0.6
+shm-quotation-api                        robo2025/shm-quotation:dev-0.0.8
+sms-batch-api                            robo2025/sms-batch-api:dev-1.0.5
+sms-center-api                           robo2025/sms-center-api:dev-1.0.7
+solution-quote-api                       robo2025/solution-quote-api-l:dev-1.7.4
+sso-api                                  robo2025/sso-api-l:dev-1.8.0
+sso-front                                robo2025/sso-front-l:dev-v2.0.1
+vision-api                               robo2025/vision-api:dev-1.1.3
+welding-api                              robo2025/welding-api:dev-1.1.7
