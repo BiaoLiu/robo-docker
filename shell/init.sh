@@ -5,15 +5,28 @@
 # 文件内容为deployment name与image
 ###########################################
 
-# cd /opt/compose
 
-sudo touch deploy_temp.txt deploy.txt
+read -p "Please input deploy environment parameters [test/proc]:" env
 
-kubectl get deploy -n test | cut -d " " -f 1 | sed -n '{s/^[ \t]*//;2,$p}' > deploy_temp.txt
+case $env in
+test)
+  echo "test deploy";;
+proc)
+  echo "proc deploy";;
+*)
+  echo "error choice"
+  exit 1;;
+esac
+
+cd /opt/compose/$env
+
+sudo touch deploy_temp.txt deploy_$env.txt
+
+kubectl get deploy -n $env | cut -d " " -f 1 | sed -n '{s/^[ \t]*//;2,$p}' > deploy_temp.txt
 
 cat ./deploy_temp.txt | while read deploy_name
 do
-   image_name=$(kubectl describe deploy ${deploy_name} -n test | sed -n 's/Image:\s*\(.*\)/\1/p' | sed -n 's/^[ \t]*//p')
+   image_name=$(kubectl describe deploy ${deploy_name} -n $env | sed -n 's/Image:\s*\(.*\)/\1/p' | sed -n 's/^[ \t]*//p')
    # space=$((15-${#deploy_name}))
 
    echo "============================================================================"
@@ -28,7 +41,7 @@ do
 done
 
 # deploy.txt列对齐
-awk -F ' ' '{printf("%-40s %s\n",$1,$2)}' deploy_temp.txt  > deploy.txt
+awk -F ' ' '{printf("%-40s %s\n",$1,$2)}' deploy_temp.txt  > deploy_$env.txt
 
 sudo rm -f deploy_temp.txt
 
